@@ -22,22 +22,17 @@
     </header>
 
     <nav>
+        <div class="menu-toggle">☰</div>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Proyecto</a></li>
-            <li><a href="#">Recorrido</a></li>
-            <li><a href="#">Galería</a></li>
-            <li><a href="#">Contacto</a></li>
+             <li><a href="index.html">Inicio</a></li>
+
+            <li><a href="minas.html" class="activo">Las Minas</a></li>
+            <li><a href="ubicacion.html">Viví la experiencia</a></li>
+
         </ul>
     </nav>
 
-    <section class="carrusel">
-        <div class="slides">
-            <img src="img/Escuela..jpeg" alt="Imagen 1">
-            <img src="img/Cerro, Creo..jpeg" alt="Imagen 2">
-            <img src="img/Iglesia.jpeg" alt="Imagen 4">
-        </div>
-    </section>
+    
 
     <main>
         <section class="presentacion-minas">
@@ -48,13 +43,7 @@ desarrollo económico de esta región. La extracción de plata atrajo trabajador
 el crecimiento de la localidad y dejó un importante patrimonio histórico que aún puede
 conocerse a través de sus antiguos yacimientos.
  </p>
- <figure>
- <img src="img/mina-principal.jpg"
- alt="Vista general de la Mina La Argentina">
- <figcaption>
- Figura 1. Vista panorámica de la Mina La Argentina.
- </figcaption>
- </figure>
+ 
 </section>
 
 <section class="historia">
@@ -74,20 +63,20 @@ dejó una profunda huella en la historia de la localidad La Argentina.
  </p>
  </article>
  <figure>
- <img src="imagenes/exploracion.jpg"
- alt="Representación de las primeras exploraciones mineras">
+ <img src="img/mina1.jpg"
+ alt="Vista exterior de una de las minas de La Argentina">
  <figcaption>
- Figura 2. Las primeras exploraciones mineras realizadas en la región.
+ Figura 1. Vista exterior de una de las minas de La Argentina.
  </figcaption>
  </figure>
 </section>
 
 <section class="plata">
  <figure>
- <img src="imagenes/mina-plata.jpg"
- alt="Ingreso a la Mina La Argentina">
+ <img src="img/mina2.jpg"
+ alt="Vista interior de una de las minas de La Argentina">
  <figcaption>
- Figura 3. Ingreso a la antigua Mina La Argentina.
+ Figura 2. Vista interior de una de las minas de La Argentina.
  </figcaption>
  </figure>
  <article>
@@ -123,6 +112,15 @@ inundarse y nunca volvió a explotarse con la misma intensidad.
         <p>&copy; 2026 - Caminando la Historia | IPEM 109 Jerónimo Luis de Cabrera Anexo La Argentina.</p>
     </footer>
 
+
+<script>
+    const btn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav ul");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("show");
+    });
+</script>    
 </body>
 
 </html>

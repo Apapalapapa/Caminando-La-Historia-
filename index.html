@@ -22,27 +22,28 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Proyecto</a></li>
-            <li><a href="#">Recorrido</a></li>
-            <li><a href="#">Galería</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="menu-toggle">☰</div>
+
+    <ul>
+        <li><a href="index.html" class="activo">Inicio</a></li>
+        <li><a href="minas.html">Las Minas</a></li>
+        <li><a href="ubicacion.html">Viví la experiencia</a></li>
+    </ul>
+</nav>
 
     <section class="carrusel">
         <div class="slides">
             <img src="img/Escuela..jpeg" alt="Imagen 1">
             <img src="img/Cerro, Creo..jpeg" alt="Imagen 2">
-            <img src="img/Iglesia.jpeg" alt="Imagen 4">
+            <img src="img/Iglesia.jpeg" alt="Imagen 3">
         </div>
     </section>
 
-    <main>
-        <section>
-            <h2>Presentación del Proyecto</h2>
+   <main>
+    <section class="presentacion">
+        <h2>Caminando la Historia...</h2>
 
+        <div class="bloque-texto">
             <p>
                 Caminando la Historia es un proyecto educativo que busca conocer,
                 valorar y difundir la historia de nuestra comunidad a través de
@@ -59,13 +60,27 @@
                 El proyecto promueve la participación activa, el trabajo en equipo
                 y el compromiso con la preservación de la memoria histórica.
             </p>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
     <footer>
         <p>&copy; 2026 - Caminando la Historia | IPEM 109 Jerónimo Luis de Cabrera Anexo La Argentina.</p>
     </footer>
 
+
+
+<script>
+    const btn = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("nav ul");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("show");
+    });
+</script>
+
+
+    
 </body>
 
 </html>

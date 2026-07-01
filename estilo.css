@@ -1,6 +1,14 @@
 /* =========================
    CONFIGURACIÓN GENERAL
 ========================= */
+html, body {
+    overflow-x: hidden;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
 
 * {
     margin: 0;
@@ -61,7 +69,8 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 20px;
 }
 
 nav a {
@@ -77,6 +86,12 @@ nav a:hover {
     background-color: #780000;
 }
 
+nav a.activo {
+
+    background-color: #780000;
+    color: white;
+    font-weight: bold;
+}
 /* =========================
    CARRUSEL
 ========================= */
@@ -89,38 +104,35 @@ nav a:hover {
 
 .slides {
     display: flex;
-    width: 400%;
+    width: 300%;
     height: 100%;
-    animation: carrusel 16s infinite;
+    animation: carrusel 12s infinite;
 }
 
 .slides img {
-    width: 25%;
+    width: 33.333%;
     height: 100%;
     object-fit: cover;
 }
 
 @keyframes carrusel {
 
-    0%, 20% {
+    0%, 30% {
         transform: translateX(0);
     }
 
-    25%, 45% {
-        transform: translateX(-25%);
+    35%, 65% {
+        transform: translateX(-33.333%);
     }
 
-    50%, 70% {
-        transform: translateX(-50%);
-    }
-
-    75%, 95% {
-        transform: translateX(-75%);
+    70%, 95% {
+        transform: translateX(-66.666%);
     }
 
     100% {
         transform: translateX(0);
     }
+
 }
 
 /* =========================
@@ -148,7 +160,25 @@ main p {
     margin-bottom: 15px;
     text-align: justify;
 }
+.presentacion {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
+.presentacion h2 {
+    margin-bottom: 20px;
+}
+
+.bloque-texto {
+    max-width: 850px;
+    margin: auto;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.bloque-texto p {
+    margin-bottom: 15px;
+}
 /* =========================
    FOOTER
 ========================= */
@@ -173,15 +203,57 @@ footer {
     }
 
     nav ul {
-        flex-wrap: wrap;
+        flex-direction: column;
+        padding-left: 0;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 12px;
     }
 
     .carrusel {
-        height: 250px;
+        height: 220px;
     }
 
     main {
         width: 95%;
+        padding: 15px;
+    }
+
+    /* BLOQUES EN COLUMNA */
+    .historia,
+    .plata {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .historia img,
+    .plata img {
+        height: auto;
+    }
+
+    .video video,
+    .ubicacion iframe {
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    .boton-mapa {
+        width: 100%;
+        text-align: center;
+    }
+    
+}
+
+@media (max-width: 1024px) {
+    main {
+        width: 90%;
+    }
+
+    .historia,
+    .plata {
+        gap: 20px;
     }
 }
 /*======================================
@@ -215,6 +287,8 @@ footer {
 }
 .historia img{
  width:100%;
+ height:400px;
+object-fit:cover;
  border-radius:10px;
  box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
@@ -241,6 +315,8 @@ footer {
 }
 .plata img{
  width:100%;
+ height:400px;
+object-fit:cover;
  border-radius:10px;
  box-shadow:0 4px 10px rgba(0,0,0,.2);
 }
@@ -266,4 +342,121 @@ footer {
 }
 .curiosidad p{
  margin-bottom:0;
+}
+
+.hero-visita {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-visita p {
+    max-width: 850px;
+    margin: 15px auto 0;
+}
+
+/* ================= VIDEO Y MAPA ================= */
+
+.video,
+.ubicacion {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.video video,
+.ubicacion iframe {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 16 / 9;
+    display: block;
+    margin: 20px auto;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* ================= BOTÓN MAPA ================= */
+
+.boton-mapa {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 30px;
+    background: #c1121f;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.boton-mapa:hover {
+    background: #780000;
+}
+
+/* ================= GUIA ================= */
+
+.guia {
+    background: #f8f8f8;
+    border-left: 8px solid #c1121f;
+    padding: 20px;
+    margin-bottom: 60px;
+}
+
+.guia h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.guia p {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ================= RECOMENDACIONES ================= */
+
+.recomendaciones {
+    margin-bottom: 60px;
+}
+
+.recomendaciones ul {
+    margin-top: 20px;
+    padding-left: 25px;
+}
+
+.recomendaciones li {
+    margin-bottom: 12px;
+}
+
+
+
+/* botón hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: white;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        padding-left: 0;
+        background-color: #c1121f;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li a {
+        text-align: center;
+        padding: 12px;
+    }
 }
